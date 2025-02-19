@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free Bengali Calendar with English dates and festivals">
-    <meta name="keywords" content="Bengali Calendar, Bangla Calendar, Bengali Festivals, Bengali Dates">
-    <title>বাংলা ক্যালেন্ডার - Bengali Calendar</title>
+    <meta name="description" content="Indian Regional Calendars with English dates and festivals">
+    <meta name="keywords" content="Bengali Calendar, Odia Calendar, Rajasthani Calendar, Kannada Calendar, Tamil Calendar, Malayalam Calendar, Hindi Calendar">
+    <title>ভারতীয় পঞ্জিকা - Indian Regional Calendars</title>
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Kannada:wght@400;500;700&family=Noto+Sans+Malayalam:wght@400;500;700&family=Noto+Sans+Tamil:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Noto+Sans+Oriya:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google AdSense Code -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
      crossorigin="anonymous"></script>
@@ -20,8 +19,38 @@
         <div class="nav-content">
             <a href="index.html" class="logo">
                 <img src="images/favicon.svg" alt="Calendar Logo" class="nav-logo">
-                <span>বাংলা ক্যালেন্ডার</span>
+                <span>ভারতীয় পঞ্জিকা</span>
             </a>
+            <div class="language-selector">
+                <button class="active" data-lang="bengali">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>বাংলা</span>
+                </button>
+                <button data-lang="odia">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>ଓଡ଼ିଆ</span>
+                </button>
+                <button data-lang="rajasthani">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>राजस्थानी</span>
+                </button>
+                <button data-lang="kannada">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>ಕನ್ನಡ</span>
+                </button>
+                <button data-lang="tamil">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>தமிழ்</span>
+                </button>
+                <button data-lang="malayalam">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>മലയാളം</span>
+                </button>
+                <button data-lang="hindi">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>हिंदी</span>
+                </button>
+            </div>
             <div class="nav-links">
                 <a href="index.html" class="active">Calendar</a>
                 <a href="rashi.html">রাশি/নক্ষত্র</a>
@@ -44,62 +73,52 @@
             </script>
         </div>
 
-        <header class="main-header">
-            <div class="header-content">
-                <h1>বাংলা ক্যালেন্ডার</h1>
-                <h2>Bengali Calendar</h2>
-                <p class="subtitle">Bengali Dates & Festivals</p>
-            </div>
-        </header>
+        <div class="calendar-section">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1 id="calendarTitle">বাংলা পঞ্জিকা</h1>
+                    <h2 id="calendarSubtitle">Bengali Calendar</h2>
+                    <p class="subtitle" id="calendarDescription">Dates, Festivals & Rashi</p>
+                </div>
+            </header>
 
-        <!-- Middle Ad Space -->
-        <div class="ad-container ad-horizontal">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="YOUR_AD_SLOT_ID"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <div class="calendar-controls">
+                <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                <div class="current-month">
+                    <h2 id="currentMonthRegional"></h2>
+                    <h3 id="currentMonthEnglish"></h3>
+                    <h3 id="gregorianYear"></h3>
+                </div>
+                <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="calendar-container">
+                <div class="weekdays" id="weekdaysContainer">
+                    <!-- Weekdays will be populated by JavaScript -->
+                </div>
+                <div id="calendar-days" class="calendar-days"></div>
+            </div>
         </div>
 
-        <div class="calendar-controls">
-            <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
-            <div class="current-month">
-                <h2 id="currentMonthBengali"></h2>
-                <h3 id="currentMonthEnglish"></h3>
-                <h3 id="gregorianMonth"></h3>
+        <div class="rashi-section">
+            <h3 id="rashiTitle">রাশিফল / Rashi Predictions</h3>
+            <div id="rashiContainer" class="rashi-container">
+                <!-- Rashi content will be populated by JavaScript -->
             </div>
-            <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
         </div>
 
-        <div class="calendar-container">
-            <div class="weekdays">
-                <div>রবি</div>
-                <div>সোম</div>
-                <div>মঙ্গল</div>
-                <div>বুধ</div>
-                <div>বৃহস্পতি</div>
-                <div>শুক্র</div>
-                <div>শনি</div>
-            </div>
-            <div id="calendar-days" class="calendar-days"></div>
-        </div>
-
-        <div class="festival-container">
-            <h3>উৎসব ও পার্বণ (Festivals & Celebrations)</h3>
+        <div class="festival-section">
+            <h3 id="festivalTitle">উৎসব ও পার্বণ / Festivals</h3>
             <div class="festival-categories">
                 <div class="category-filter">
-                    <button class="active" data-category="all">সব (All)</button>
-                    <button data-category="religious">ধর্মীয় (Religious)</button>
-                    <button data-category="cultural">সাংস্কৃতিক (Cultural)</button>
-                    <button data-category="national">জাতীয় (National)</button>
+                    <button class="active" data-category="all">All</button>
+                    <button data-category="religious">Religious</button>
+                    <button data-category="cultural">Cultural</button>
+                    <button data-category="national">National</button>
                 </div>
             </div>
             <div id="festivals" class="festivals-list">
-                <!-- Festivals will be dynamically added here -->
+                <!-- Festivals will be populated by JavaScript -->
             </div>
         </div>
     </div>
@@ -131,6 +150,7 @@
         </div>
     </footer>
 
+    <script src="calendar-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
