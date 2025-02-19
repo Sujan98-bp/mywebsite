@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>রাশি ও নক্ষত্র - Bengali Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <img src="images/favicon.svg" alt="Calendar Logo" class="nav-logo">
+                <span>বাংলা ক্যালেন্ডার</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Calendar</a>
+                <a href="rashi.html" class="active">রাশি/নক্ষত্র</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-header">
+            <div class="header-content">
+                <h1>রাশি ও নক্ষত্র</h1>
+                <h2>Bengali Zodiac & Constellations</h2>
+                <p class="subtitle">Daily Rashi and Nakshatra Predictions</p>
+            </div>
+        </div>
+
+        <div class="rashi-container">
+            <div class="rashi-section">
+                <h3>আজকের রাশিফল</h3>
+                <div class="rashi-grid">
+                    <div class="rashi-card" data-rashi="মেষ">
+                        <h4>মেষ</h4>
+                        <p class="rashi-date">Aries (Mar 21 - Apr 19)</p>
+                        <p class="rashi-prediction">আজ আপনার দিনটি শুভ। নতুন সুযোগ আসতে পারে।</p>
+                    </div>
+                    <div class="rashi-card" data-rashi="বৃষ">
+                        <h4>বৃষ</h4>
+                        <p class="rashi-date">Taurus (Apr 20 - May 20)</p>
+                        <p class="rashi-prediction">কর্মক্ষেত্রে সাফল্য পেতে পারেন।</p>
+                    </div>
+                    <div class="rashi-card" data-rashi="মিথুন">
+                        <h4>মিথুন</h4>
+                        <p class="rashi-date">Gemini (May 21 - Jun 20)</p>
+                        <p class="rashi-prediction">পারিবারিক সম্পর্ক উন্নত হবে।</p>
+                    </div>
+                    <!-- Add more rashi cards -->
+                </div>
+            </div>
+
+            <div class="nakshatra-section">
+                <h3>নক্ষত্র স্থিতি</h3>
+                <div class="nakshatra-info">
+                    <div class="current-nakshatra">
+                        <h4>বর্তমান নক্ষত্র</h4>
+                        <p id="currentNakshatra">রোহিণী</p>
+                        <p class="nakshatra-time">সময়: 12:30 PM - 2:45 PM</p>
+                    </div>
+                    <div class="nakshatra-list">
+                        <h4>আজকের নক্ষত্র তালিকা</h4>
+                        <ul id="nakshatraList">
+                            <!-- Will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="rashi.js"></script>
+</body>
+</html>
