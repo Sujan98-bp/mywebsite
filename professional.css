@@ -1,0 +1,474 @@
+:root {
+    /* Classic Color Palette */
+    --primary-color: #54e0e2;    /* Turquoise */
+    --secondary-color: #3fb5b7;  /* Darker Turquoise */
+    --accent-color: #41d0d2;     /* Bright Turquoise */
+    --background-color: #f5f5f5; /* Light Gray */
+    --text-color: #333333;       /* Dark Gray */
+    --white: #ffffff;            /* Pure White */
+    --gray-medium: #808080;      /* Medium Gray */
+    
+    /* Typography */
+    --font-family-primary: 'Baskerville', 'Palatino Linotype', serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: transform 0.5s ease;
+    transform: none !important;
+}
+
+body:hover {
+    transform: none !important;
+}
+
+/* Classic Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: var(--font-weight-bold);
+    font-family: 'Palatino Linotype', serif;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-item {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+}
+
+.service-item:hover {
+    transform: scale(1.01) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    filter: sepia(10%) contrast(110%);
+    transform: none !important;
+}
+
+.service-item:hover .service-image {
+    transform: none !important;
+}
+
+.service-details {
+    flex-grow: 1;
+}
+
+.service-title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-bold);
+    font-family: 'Baskerville', serif;
+}
+
+.service-description {
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    font-style: italic;
+}
+
+.service-duration, .service-price {
+    display: block;
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-bold);
+}
+
+.service-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid var(--background-color);
+    padding-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-controls::before {
+    display: none !important;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transform: none !important;
+}
+
+.quantity-btn:active {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    transform: none !important;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.search-container input {
+    padding: 12px 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    font-size: 16px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.search-container button {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-container button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Vintage Paper Texture Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.service-item,
+.service-image,
+.quantity-btn,
+body {
+    transition: all 0.3s ease !important;
+}
+
+/* Unique 3D Text Effect for Sujan */
+.sujan-logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: #ffffff;
+    text-shadow: 
+        3px 3px 0 rgba(0,0,0,0.1),
+        6px 6px 0 rgba(0,0,0,0.05),
+        9px 9px 0 rgba(0,0,0,0.025);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.sujan-logo::before {
+    content: 'Sujan';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: transparent;
+    text-shadow: none;
+    background: linear-gradient(45deg, #6A5ACD, #357ae1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transform: translate(5px, 5px);
+    opacity: 0.5;
+}
+
+.sujan-logo:hover {
+    text-shadow: 
+        4px 4px 0 rgba(0,0,0,0.15),
+        8px 8px 0 rgba(0,0,0,0.1),
+        12px 12px 0 rgba(0,0,0,0.05);
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sujan-logo {
+        font-size: 2rem;
+    }
+}
+
+/* 3D Button Effect */
+.btn-3d {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.btn-3d::before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+    transform: rotateX(50deg);
+    transform-origin: bottom;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.btn-3d:hover {
+    transform: translateY(-5px);
+}
+
+.btn-3d:active {
+    transform: translateY(2px);
+}
+
+/* Apply to specific button types */
+.nav-link.btn-3d,
+.back-button.btn-3d,
+.service-controls .quantity-btn.btn-3d,
+.btn-submit.btn-3d {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Back Button Styles */
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transform: none;
+    background: linear-gradient(45deg, #FF3366, #FF9933);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* 3D Logo Animation */
+.Genpro-3d-logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #FF3366, #FF9933);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        -2px -2px 4px rgba(255, 51, 102, 0.5);
+    animation: float 3s ease-in-out infinite;
+}
+
+.Genpro-3d-logo:hover {
+    background: linear-gradient(45deg, #FF9933, #FF3366);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: brightness(1.2);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Update button styles */
+.btn-primary, 
+.search-container button,
+.nav-link.btn-3d {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover, 
+.search-container button:hover,
+.nav-link.btn-3d:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Active state for navigation buttons */
+.nav-link.btn-3d.active {
+    background-color: var(--secondary-color);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+
+/* User Menu Styles */
+.user-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.user-menu .nav-link {
+    background: linear-gradient(45deg, #FF3366, #FF9933);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.user-menu .nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Update header content to accommodate user menu */
+.header-content {
+    position: relative;
+    padding-top: 60px;
+}

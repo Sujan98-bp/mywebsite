@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Genpro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #72d39e;
+            --secondary-color: #6A5ACD;
+            --text-color: #333333;
+            --background-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background: #54e0e2;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 15px;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: 40px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-section {
+            margin-bottom: 20px;
+        }
+
+        .faq-category {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .faq-category h2 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: #666;
+            padding-left: 20px;
+            border-left: 2px solid var(--primary-color);
+            margin-top: 10px;
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 1px solid #e7e7e7;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e7e7e7;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .faq-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="back-button">←</a>
+        </div>
+    </header>
+
+    <div class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+
+        <div class="faq-section">
+            <div class="faq-category">
+                <h2>General Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        How do I book a service?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        You can book a service through our website or mobile app. Simply select the service you want, choose your preferred date and time, and complete the booking process. You'll receive a confirmation email once your booking is confirmed.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        What payment methods do you accept?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We accept various payment methods including credit/debit cards, digital wallets, and online banking. All payments are processed securely through our platform.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>Massage Services</h2>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        What should I prepare before a massage session?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We recommend taking a shower before the session, wearing comfortable clothing, and ensuring you have a quiet, clean space for the massage. Our therapist will bring all necessary equipment.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        Are your massage therapists certified?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, all our massage therapists are certified professionals with proper training and experience. They undergo regular training and quality checks to maintain our high service standards.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>Beauty Services</h2>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        What beauty services do you offer?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We offer a wide range of beauty services including facials, manicures, pedicures, hair care, and makeup services. Check our beauty services page for a complete list of offerings.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        What products do you use for beauty treatments?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We use high-quality, branded products that are safe and suitable for different skin types. Our beauty professionals can recommend specific products based on your skin type and concerns.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-category">
+                <h2>Home Cleaning</h2>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        What cleaning supplies do I need to provide?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Our cleaning professionals bring their own cleaning supplies and equipment. However, if you prefer specific products to be used in your home, please let us know in advance.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer(this)">
+                        How long does a typical cleaning service take?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The duration depends on the size of your home and the type of cleaning service you've booked. A standard cleaning for a 2-bedroom apartment typically takes 2-3 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li><a href="booking.html">My Bookings</a></li>
+                    <li><a href="booking-history.html">Booking History</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="men-massage.html">Men's Massage</a></li>
+                    <li><a href="women-massage.html">Women's Massage</a></li>
+                    <li><a href="beauty-services.html">Beauty Services</a></li>
+                    <li><a href="home-cleaning.html">Home Cleaning</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help & Support</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li>Email: support@genpro.com</li>
+                    <li>Phone: +1234567890</li>
+                    <li>Address: 123 Main Street</li>
+                    <li>City, State, 12345</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Genpro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAnswer(question) {
+            const answer = question.nextElementSibling;
+            const toggle = question.querySelector('.toggle');
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.toggle').textContent = '+';
+                }
+            });
+
+            // Toggle current answer
+            answer.classList.toggle('active');
+            toggle.textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+    </script>
+</body>
+</html>

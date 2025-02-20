@@ -1,156 +1,503 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Indian Regional Calendars with English dates and festivals">
-    <meta name="keywords" content="Bengali Calendar, Odia Calendar, Rajasthani Calendar, Kannada Calendar, Tamil Calendar, Malayalam Calendar, Hindi Calendar">
-    <title>ভারতীয় পঞ্জিকা - Indian Regional Calendars</title>
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&family=Noto+Sans+Kannada:wght@400;500;700&family=Noto+Sans+Malayalam:wght@400;500;700&family=Noto+Sans+Tamil:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&family=Noto+Sans+Oriya:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Genpro- Genpro company Services at Your Doorstep</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="professional.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google AdSense Code -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7945304664682550"
-     crossorigin="anonymous"></script>
+    
+    <!-- Styles -->
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #72d39e;
+            --secondary-color: #6A5ACD;
+            --text-color: #333333;
+            --background-color: #5a64f0;
+            --accent-color: #9370DB;
+            --gray-light: #cdf394;
+            --gray-medium: #7fd7e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.9;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Header */
+        .header {
+            background: #54e0e2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 15px;
+            z-index: 1000;
+            padding: 0.5rem 0;
+            height: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 1rem;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: auto;
+            padding-left: 2rem;
+        }
+
+        .user-menu a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .user-menu a:hover {
+            background-color: rgba(106, 90, 205, 0.1);
+        }
+
+        .user-menu i {
+            font-size: 1.2rem;
+        }
+
+        #loginBtn {
+            background-color: #6A5ACD;
+            color: white;
+        }
+
+        #loginBtn:hover {
+            background-color: #5849c0;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            height: 36px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link:hover {
+            background: var(--gray-light);
+        }
+
+        .btn-3d {
+            background: linear-gradient(145deg, #1fb235, #c51a1a);
+            box-shadow: 2px 2px 5px #7b9ad7, -2px -2px 5px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-3d:hover {
+            box-shadow: inset 2px 2px 5px #d9d9d9, inset -2px -2px 5px #ffffff;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: var(--gray-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        /* Service cards */
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-content p {
+            color: #333333;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .feature-tag {
+            background: var(--gray-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-color);
+        }
+
+        .book-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* Panel styles */
+        .panel-container {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .panel-link {
+            text-decoration: none;
+            color: var(--text-color);
+            background: var(--gray-light);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        
+        .panel-link:hover {
+            background: var(--gray-medium);
+        }
+        
+        .panel-link h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .panel-link p {
+            font-size: 1rem;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="nav-content">
-            <a href="index.html" class="logo">
-                <img src="images/favicon.svg" alt="Calendar Logo" class="nav-logo">
-                <span>ভারতীয় পঞ্জিকা</span>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="Genpro-3d-logo">Genpro</h1>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-link btn-3d">Home</a>
+                    <a href="beauty-services.html" class="nav-link btn-3d">Beauty Services</a>
+                    <a href="women-massage.html" class="nav-link btn-3d">Women's Massage</a>
+                    <a href="men-massage.html" class="nav-link btn-3d">Men's Massage</a>
+                    <a href="home-cleaning.html" class="nav-link btn-3d">Home Cleaning</a>
+                </nav>
+                <div class="user-menu">
+                    <a href="profile.html" id="profileBtn" class="nav-link">My Profile</a>
+                    <a href="booking.html" id="bookingBtn" class="nav-link">Book Now</a>
+                    <button onclick="logout()" id="logoutBtn" class="nav-link" style="border: none; background: none; cursor: pointer;">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Professional Services at Your Doorstep</h1>
+                <p>Expert professionals for all your home service needs</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Search services..." id="serviceSearch">
+                    <button type="button" onclick="searchServices()">Search</button>
+                </div>
+                <button class="btn btn-primary">Book Now</button>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="service-grid" id="serviceGrid">
+                    <!-- Services will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="panel-container">
+            <a href="admin/login.html" class="panel-link">
+                <h2>Admin Panel</h2>
+                <p>Manage Users, Bookings, and Services</p>
             </a>
-            <div class="language-selector">
-                <button class="active" data-lang="bengali">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>বাংলা</span>
-                </button>
-                <button data-lang="odia">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>ଓଡ଼ିଆ</span>
-                </button>
-                <button data-lang="rajasthani">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>राजस्थानी</span>
-                </button>
-                <button data-lang="kannada">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>ಕನ್ನಡ</span>
-                </button>
-                <button data-lang="tamil">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>தமிழ்</span>
-                </button>
-                <button data-lang="malayalam">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>മലയാളം</span>
-                </button>
-                <button data-lang="hindi">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>हिंदी</span>
-                </button>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Calendar</a>
-                <a href="rashi.html">রাশি/নক্ষত্র</a>
-                <a href="#festivals">Festivals</a>
-            </div>
-        </div>
-    </nav>
+            <a href="service-provider/login.html" class="panel-link">
+                <h2>Service Provider Panel</h2>
+                <p>Manage Your Bookings and Services</p>
+            </a>
+        </section>
 
-    <div class="container">
-        <!-- Top Ad Space -->
-        <div class="ad-container ad-horizontal">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
-                 data-ad-slot="YOUR_AD_SLOT_ID"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+    </main>
 
-        <div class="calendar-section">
-            <header class="main-header">
-                <div class="header-content">
-                    <h1 id="calendarTitle">বাংলা পঞ্জিকা</h1>
-                    <h2 id="calendarSubtitle">Bengali Calendar</h2>
-                    <p class="subtitle" id="calendarDescription">Dates, Festivals & Rashi</p>
-                </div>
-            </header>
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import firebaseConfig from './firebase-config.js';
 
-            <div class="calendar-controls">
-                <button id="prevMonth"><i class="fas fa-chevron-left"></i></button>
-                <div class="current-month">
-                    <h2 id="currentMonthRegional"></h2>
-                    <h3 id="currentMonthEnglish"></h3>
-                    <h3 id="gregorianYear"></h3>
-                </div>
-                <button id="nextMonth"><i class="fas fa-chevron-right"></i></button>
-            </div>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-            <div class="calendar-container">
-                <div class="weekdays" id="weekdaysContainer">
-                    <!-- Weekdays will be populated by JavaScript -->
-                </div>
-                <div id="calendar-days" class="calendar-days"></div>
-            </div>
-        </div>
+        // Check authentication
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = '/login.html';
+                return;
+            }
+        });
 
-        <div class="rashi-section">
-            <h3 id="rashiTitle">রাশিফল / Rashi Predictions</h3>
-            <div id="rashiContainer" class="rashi-container">
-                <!-- Rashi content will be populated by JavaScript -->
-            </div>
-        </div>
+        // Logout function
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+                window.location.href = '/login.html';
+            } catch (error) {
+                console.error('Error signing out:', error);
+                alert('Error signing out. Please try again.');
+            }
+        }
+    </script>
+    <script>
+        // Service data
+     
+       
+        // Render services
+        function renderServices() {
+            const serviceGrid = document.getElementById('serviceGrid');
+            services.forEach(service => {
+                const serviceCard = document.createElement('div');
+                serviceCard.className = 'service-card';
+                serviceCard.innerHTML = `
+                    <div class="service-image">
+                        <img src="https://via.placeholder.com/300x200?text=${service.name}" alt="${service.name}">
+                    </div>
+                    <div class="service-content">
+                        <h3>${service.name}</h3>
+                        <p>${service.description}</p>
+                        <div class="service-features">
+                            ${service.features.map(feature => `<span class="feature-tag">${feature}</span>`).join('')}
+                        </div>
+                        <div class="service-price">${service.price}</div>
+                        <button class="btn btn-primary service-book-btn" data-service="${service.name}">Book Now</button>
+                    </div>
+                `;
+                serviceGrid.appendChild(serviceCard);
+            });
+        }
 
-        <div class="festival-section">
-            <h3 id="festivalTitle">উৎসব ও পার্বণ / Festivals</h3>
-            <div class="festival-categories">
-                <div class="category-filter">
-                    <button class="active" data-category="all">All</button>
-                    <button data-category="religious">Religious</button>
-                    <button data-category="cultural">Cultural</button>
-                    <button data-category="national">National</button>
-                </div>
-            </div>
-            <div id="festivals" class="festivals-list">
-                <!-- Festivals will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
+        // Check authentication before booking
+        window.bookService = async function(serviceId) {
+            const user = auth.currentUser;
+            if (!user) {
+                alert('Please log in to book a service.');
+                window.location.href = '/login.html';
+                return;
+            }
+            const service = services.find(s => s.id === serviceId);
+            if (!service) return;
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>About</h4>
-                <p>A free Bengali Calendar providing accurate dates and cultural information.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#festivals">Festivals</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 বাংলা ক্যালেন্ডার. All rights reserved.</p>
-            <p1>created by Sujan Bardhan</p1>
-        </div>
-    </footer>
+            // Navigate to service-specific page based on service name
+            const servicePageMap = {
+                'Massage': 'massage.html',
+                'Home Cleaning': 'home-cleaning.html',
+                'Plumbing': 'plumbing.html',
+                'Electrical': 'electrical.html',
+                'Carpentry': 'carpentry.html',
+                'Painting': 'painting.html'
+            };
 
-    <script src="calendar-data.js"></script>
-    <script src="script.js"></script>
+            const servicePage = servicePageMap[service.name];
+            if (servicePage) {
+                window.location.href = servicePage;
+            } else {
+                alert('No specific page for this service');
+            }
+        }
+
+        // Search services
+        function searchServices() {
+            const searchInput = document.getElementById('serviceSearch').value.toLowerCase();
+            const services = document.querySelectorAll('.service-card');
+            
+            services.forEach(service => {
+                const title = service.querySelector('h3').textContent.toLowerCase();
+                const description = service.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchInput) || description.includes(searchInput)) {
+                    service.style.display = 'block';
+                } else {
+                    service.style.display = 'none';
+                }
+            });
+        }
+
+        // Check login status
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed.');
+            const mobile = sessionStorage.getItem('userMobile');
+            const welcomeMsg = document.getElementById('welcomeMessage');
+            const loginBtn = document.getElementById('loginBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const profileBtn = document.getElementById('profileBtn');
+            
+            if (mobile) {
+                welcomeMsg.textContent = `Welcome, ${mobile}!`;
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'inline-block';
+                profileBtn.style.display = 'inline-block';
+            } else {
+                welcomeMsg.textContent = '';
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'none';
+                profileBtn.style.display = 'none';
+            }
+        });
+
+        function handleLogout() {
+            sessionStorage.removeItem('userMobile');
+            window.location.href = 'login.html';
+        }
+
+    </script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test OTP</title>
+</head>
+<body>
+    <h2>Test OTP System</h2>
+    <input type="text" id="mobile" placeholder="Enter mobile number">
+    <button onclick="sendOTP()">Send OTP</button>
+    <div id="message"></div>
+
+    <script>
+        async function sendOTP() {
+            const mobile = document.getElementById('mobile').value;
+            const messageDiv = document.getElementById('message');
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/user/send-otp', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ mobileNumber: mobile })
+                });
+                
+                const data = await response.json();
+                messageDiv.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                messageDiv.textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
